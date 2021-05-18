@@ -85,6 +85,7 @@
         
 ## Hill Climbing Pseudocode <a name="hill_climbing_pseudo"></a> 
 - Find the pseudocode for Hill Climbing below
+
     ![image5]
 
 ### What's the difference between G and J?
@@ -96,12 +97,18 @@
 
 ## Beyond Hill Climbing <a name="eyond_hill_climbing"></a> 
 - Objective function can marked by a contaour plot
+
     ![image6]
+
 - **Steepest ascent hill climbing** is a variation of hill climbing that chooses a small number of neighboring policies at each iteration and chooses the best among them.
+
     ![image7]
 - **Simulated annealing** uses a pre-defined schedule to control how the policy space is explored, and gradually reduces the search radius as we get closer to the optimal solution.
+
     ![image8]
+    
 - **Adaptive noise scaling** decreases the search radius with each iteration when a new best policy is found, and otherwise increases the search radius.
+
     ![image9]
 
 ## More Black-Box Optimization <a name="black_box"></a>
