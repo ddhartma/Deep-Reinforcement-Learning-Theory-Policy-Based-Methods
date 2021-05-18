@@ -17,7 +17,7 @@
     - [Policy Function Approximation](#Policy_Function_Approximation)
     - [More on the Policy](#More_on_the_Policy)
     - [Hill Climbing - Gradient Ascent](#hill_climbing)
-    - [Hill Climbing Pseudocode](hill_climbing_pseudo)
+    - [Hill Climbing Pseudocode](#hill_climbing_pseudo)
     - [Beyond Hill Climbing](#beyond_hill_climbing)
     - [More Black-Box Optimization](#black_box)
     - [Why Policy Based Methods?](#why_policy_based_methods)
