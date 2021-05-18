@@ -1,5 +1,13 @@
 [image1]: assets/intro_policy_based_methods.png "image1"
-
+[image2]: assets/policy_function_approx.png "image2"
+[image3]: assets/more_policy_based_methods.png "image3"
+[image4]: assets/hill_climbing.png "image4"
+[image5]: assets/hill_climbing_algo.png "image5"
+[image6]: assets/hill_climbing_opti_1.png "image6"
+[image7]: assets/hill_climbing_opti_2.png "image7"
+[image8]: assets/hill_climbing_opti_3.png "image8"
+[image9]: assets/hill_climbing_opti_4.png "image9"
+[image10]: assets/optimizations_black_box.png "image10"
 
 # Deep Reinforcement Learning Theory - Policy Based Methods
 
@@ -8,7 +16,7 @@
 - [Policy Based Methods](#policy_based_methods)
     - [Policy Function Approximation](#Policy_Function_Approximation)
     - [More on the Policy](#More_on_the_Policy)
-    - [Hill Climbing](#hill_climbing)
+    - [Hill Climbing - Gradient Ascent](#hill_climbing)
     - [Hill Climbing Pseudocode](hill_climbing_pseudo)
     - [Beyond Hill Climbing](#beyond_hill_climbing)
     - [More Black-Box Optimization](#black_box)
@@ -45,33 +53,65 @@
 - With **value-based methods**, the agent uses its experience with the environment to maintain an estimate of the optimal action-value function. The optimal policy is then obtained from the optimal action-value function estimate.
 - **Policy-based methods** directly learn the optimal policy, without having to maintain a separate value function estimate.
 
+    ![image1]
+
 ## Policy Function Approximation <a name="Policy_Function_Approximation"></a> 
 - In deep reinforcement learning, it is common to represent the policy with a neural network.
     - This network takes the environment state as **input**.
     - If the environment has discrete actions, the **output** layer has a node for each possible action and contains the probability that the agent should select each possible action.
 - The weights in this neural network are initially set to random values. Then, the agent updates the weights as it interacts with (and learns more about) the environment.
 
+    ![image2]
 
 ## More on the Policy <a name="More_on_the_Policy"></a> 
 - Policy-based methods can learn either stochastic or deterministic policies, and they can be used to solve environments with either finite or continuous action spaces. 
 
-## Hill Climbing <a name="hill_climbing"></a> 
-- Hill climbing is an iterative algorithm that can be used to find the weights &theta;  for an optimal policy.
-- At each iteration,
-    - We slightly perturb the values of the current best estimate for the weights &theta;<sub>best</sub>, to yield a new set of weights.
-    - These new weights are then used to collect an episode. If the new weights &theta;<sub>new</sub> resulted in higher return than the old weights, then we set &theta;<sub>best</sub> ← &theta;<sub>new</sub>.
+    ![image3]
+
+## Hill Climbing - Gradient Ascent<a name="hill_climbing"></a> 
+- **Gradient ascent** is similar to gradient descent.
+    - Gradient descent steps in the ***direction opposite the gradient***, since it wants to minimize a function.
+    - Gradient ascent is otherwise identical, except we step in the **direction of the gradient**, to reach the maximum.
+
+- **Hill climbing** is an iterative algorithm that can be used to find the weights &theta;  for an optimal policy.
+    - At each iteration,
+        - We slightly perturb the values of the current best estimate for the weights &theta;<sub>best</sub>, to yield a new set of weights.
+        - These new weights are then used to collect an episode. If the new weights &theta;<sub>new</sub> resulted in higher return than the old weights, then we set &theta;<sub>best</sub> ← &theta;<sub>new</sub>.
+        - **Objective function J=J(θ)**: Find **&theta;** that miximizes **J**. Find **argmax<sub>&theta;</sub>J(&theta;)** 
+
+    ![image4]
+
+- [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing) is not just for reinforcement learning! It is a general optimization method that is used to find the maximum of a function.
         
 ## Hill Climbing Pseudocode <a name="hill_climbing_pseudo"></a> 
+- Find the pseudocode for Hill Climbing below
+    ![image5]
+
+### What's the difference between G and J?
+- for the same **&theta;** value  **G** will likely be different from episode to episode
+- sampled return **G** 
+- expected return **J**
+- **G** is not a perfect estimate but often **good enough** for **J**
+
 
 ## Beyond Hill Climbing <a name="eyond_hill_climbing"></a> 
+- Objective function can marked by a contaour plot
+    ![image6]
 - **Steepest ascent hill climbing** is a variation of hill climbing that chooses a small number of neighboring policies at each iteration and chooses the best among them.
+    ![image7]
 - **Simulated annealing** uses a pre-defined schedule to control how the policy space is explored, and gradually reduces the search radius as we get closer to the optimal solution.
+    ![image8]
 - **Adaptive noise scaling** decreases the search radius with each iteration when a new best policy is found, and otherwise increases the search radius.
+    ![image9]
 
 ## More Black-Box Optimization <a name="black_box"></a>
-- The **cross-entropy method** iteratively suggests a small number of neighboring policies, and uses a small percentage of the best performing policies to calculate a new estimate.
-- The **evolution strategies** technique considers the return corresponding to each candidate policy. 
-- The policy estimate at the next iteration is a weighted sum of all of the candidate policies, where policies that got higher return are given higher weight.
+- All of the algorithms in this lesson can be classified as **black-box optimization** techniques. Black-box refers to the fact that the way we evaluate **θ** is considered a black box.
+- Further black-box optimizations:
+    - The **cross-entropy method** iteratively suggests a small number of neighboring policies, and uses a small percentage of the best performing policies to calculate a new estimate.
+    - The **evolution strategies** technique considers the return corresponding to each candidate policy. 
+    - The policy estimate at the next iteration is a weighted sum of all of the candidate policies, where policies that got higher return are given higher weight.
+
+    ![image10]
  
 
 ## Why Policy Based Methods? <a name="why_policy_based_methods"></a>
@@ -79,8 +119,6 @@
     1. **Simplicity**: Policy-based methods directly get to the problem at hand (estimating the optimal policy), without having to store a bunch of additional data (i.e., the action values) that may not be useful.
     2. **Stochastic policies**: Unlike value-based methods, policy-based methods can learn true stochastic policies.
     3. **Continuous action spaces**: Policy-based methods are well-suited for continuous action spaces.
-
-
 
 
 ## Setup Instructions <a name="Setup_Instructions"></a>
