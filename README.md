@@ -95,7 +95,7 @@
 - **G** is not a perfect estimate but often **good enough** for **J**
 
 
-## Beyond Hill Climbing <a name="eyond_hill_climbing"></a> 
+## Beyond Hill Climbing <a name="beyond_hill_climbing"></a> 
 - Objective function can marked by a contaour plot
 
     ![image6]
@@ -106,7 +106,7 @@
 - **Simulated annealing** uses a pre-defined schedule to control how the policy space is explored, and gradually reduces the search radius as we get closer to the optimal solution.
 
     ![image8]
-    
+
 - **Adaptive noise scaling** decreases the search radius with each iteration when a new best policy is found, and otherwise increases the search radius.
 
     ![image9]
