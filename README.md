@@ -10,7 +10,8 @@
 [image10]: assets/optimizations_black_box.png "image10"
 [image11]: assets/hill_climbing_plot.png "image11"
 [image12]: assets/hill_climbing_agent.png "image12"
-
+[image13]: assets/cem_plot.png "image13"
+[image14]: assets/cem_agent.png "image14"
 
 
 # Deep Reinforcement Learning Theory - Policy Based Methods
@@ -555,6 +556,9 @@
 
     env.close()
     ```
+    ![image13]
+
+    ![image14]
 
 ## Setup Instructions <a name="Setup_Instructions"></a>
 The following is a brief set of instructions on setting up a cloned repository.
