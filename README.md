@@ -32,7 +32,7 @@
 - [Acknowledgments](#Acknowledgments)
 - [Further Links](#Further_Links)
 
-## Introduction <a name="what_is_reinforcement"></a>
+## Introduction <a id="what_is_reinforcement"></a>
 - Reinforcement learning is **learning** what to do — **how to map situations to actions** — so as **to maximize a numerical reward** signal. The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them. (Sutton and Barto, [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book.html))
 - Deep reinforcement learning refers to approaches where the knowledge is represented with a deep neural network
 
@@ -55,13 +55,13 @@
     - how to combine value-based and policy-based methods
     - bringing together the best of both worlds, to solve challenging reinforcement learning problems
 
-## Policy Based Methods <a name="policy_based_methods"></a> 
+## Policy Based Methods <a id="policy_based_methods"></a> 
 - With **value-based methods**, the agent uses its experience with the environment to maintain an estimate of the optimal action-value function. The optimal policy is then obtained from the optimal action-value function estimate.
 - **Policy-based methods** directly learn the optimal policy, without having to maintain a separate value function estimate.
 
     ![image1]
 
-## Policy Function Approximation <a name="Policy_Function_Approximation"></a> 
+## Policy Function Approximation <a id="Policy_Function_Approximation"></a> 
 - In deep reinforcement learning, it is common to represent the policy with a neural network.
     - This network takes the environment state as **input**.
     - If the environment has discrete actions, the **output** layer has a node for each possible action and contains the probability that the agent should select each possible action.
@@ -69,12 +69,12 @@
 
     ![image2]
 
-## More on the Policy <a name="More_on_the_Policy"></a> 
+## More on the Policy <a id="More_on_the_Policy"></a> 
 - Policy-based methods can learn either stochastic or deterministic policies, and they can be used to solve environments with either finite or continuous action spaces. 
 
     ![image3]
 
-## Hill Climbing - Gradient Ascent<a name="hill_climbing"></a> 
+## Hill Climbing - Gradient Ascent<a id="hill_climbing"></a> 
 - **Gradient ascent** is similar to gradient descent.
     - Gradient descent steps in the ***direction opposite the gradient***, since it wants to minimize a function.
     - Gradient ascent is otherwise identical, except we step in the **direction of the gradient**, to reach the maximum.
@@ -89,7 +89,7 @@
 
 - [Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing) is not just for reinforcement learning! It is a general optimization method that is used to find the maximum of a function.
         
-## Hill Climbing Pseudocode <a name="hill_climbing_pseudo"></a> 
+## Hill Climbing Pseudocode <a id="hill_climbing_pseudo"></a> 
 - Find the pseudocode for Hill Climbing below
 
     ![image5]
@@ -103,7 +103,7 @@
 - **G** is not a perfect estimate but often **good enough** for **J**
 
 
-## Beyond Hill Climbing <a name="beyond_hill_climbing"></a> 
+## Beyond Hill Climbing <a id="beyond_hill_climbing"></a> 
 - Objective function can marked by a contaour plot
 
     ![image6]
@@ -119,7 +119,7 @@
 
     ![image9]
 
-## More Black-Box Optimization <a name="black_box"></a>
+## More Black-Box Optimization <a id="black_box"></a>
 - All of the algorithms in this lesson can be classified as **black-box optimization** techniques. Black-box refers to the fact that the way we evaluate **θ** is considered a black box.
 - Further black-box optimizations:
     - The **cross-entropy method** iteratively suggests a small number of neighboring policies, and uses a small percentage of the best performing policies to calculate a new estimate.
@@ -129,13 +129,13 @@
     ![image10]
  
 
-## Why Policy Based Methods? <a name="why_policy_based_methods"></a>
+## Why Policy Based Methods? <a id="why_policy_based_methods"></a>
 - There are three reasons why we consider policy-based methods:
     1. **Simplicity**: Policy-based methods directly get to the problem at hand (estimating the optimal policy), without having to store a bunch of additional data (i.e., the action values) that may not be useful.
     2. **Stochastic policies**: Unlike value-based methods, policy-based methods can learn true stochastic policies.
     3. **Continuous action spaces**: Policy-based methods are well-suited for continuous action spaces.
 
-## Hill Climbing - Code <a name="hill_climbing_code"></a> 
+## Hill Climbing - Code <a id="hill_climbing_code"></a> 
 - Open Jupyter notebook ```hill_climbing.ipynb```
     ### Import the Necessary Packages
     ```
@@ -318,7 +318,7 @@
     ![image12]
 
 
-## Cross Entropy Method <a name="cross_entropy_method"></a> 
+## Cross Entropy Method <a id="cross_entropy_method"></a> 
 - Open Jupyter notebook ```cross_entropy_method.ipynb```
     ### Import the Necessary Packages
     ```
@@ -560,12 +560,12 @@
 
     ![image14]
 
-## Setup Instructions <a name="Setup_Instructions"></a>
+## Setup Instructions <a id="Setup_Instructions"></a>
 The following is a brief set of instructions on setting up a cloned repository.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites: Installation of Python via Anaconda and Command Line Interaface <a name="Prerequisites"></a>
+### Prerequisites: Installation of Python via Anaconda and Command Line Interaface <a id="Prerequisites"></a>
 - Install [Anaconda](https://www.anaconda.com/distribution/). Install Python 3.7 - 64 Bit
 
 - Upgrade Anaconda via
@@ -579,7 +579,7 @@ $ conda upgrade --all
 $ export PATH="/path/to/anaconda/bin:$PATH"
 ```
 
-### Clone the project <a name="Clone_the_project"></a>
+### Clone the project <a id="Clone_the_project"></a>
 - Open your Command Line Interface
 - Change Directory to your project older, e.g. `cd my_github_projects`
 - Clone the Github Project inside this folder with Git Bash (Terminal) via:
@@ -616,10 +616,10 @@ pyspark = 2.4.3
 $ conda env list
 ```
 
-## Acknowledgments <a name="Acknowledgments"></a>
-* This project is part of the Udacity Nanodegree program 'Data Science'. Please check this [link](https://www.udacity.com) for more information.
+## Acknowledgments <a id="Acknowledgments"></a>
+* This project is part of the Udacity Nanodegree program 'Deep Reinforcement Learning'. Please check this [link](https://www.udacity.com) for more information.
 
-## Further Links <a name="Further_Links"></a>
+## Further Links <a id="Further_Links"></a>
 
 Git/Github
 * [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html)
@@ -633,9 +633,38 @@ Docstrings, DRY, PEP8
 
 Further Deep Reinforcement Learning References
 * [Very good summary of DQN](https://medium.com/@nisheed/udacity-deep-reinforcement-learning-project-1-navigation-d16b43793af5)
+* [An Introduction to Deep Reinforcement Learning](https://thomassimonini.medium.com/an-introduction-to-deep-reinforcement-learning-17a565999c0c)
+* Helpful medium blog post on policies [Off-policy vs On-Policy vs Offline Reinforcement Learning Demystified!](https://kowshikchilamkurthy.medium.com/off-policy-vs-on-policy-vs-offline-reinforcement-learning-demystified-f7f87e275b48)
+* [Understanding Baseline Techniques for REINFORCE](https://medium.com/@fork.tree.ai/understanding-baseline-techniques-for-reinforce-53a1e2279b57)
 * [Cheatsheet](https://raw.githubusercontent.com/udacity/deep-reinforcement-learning/master/cheatsheet/cheatsheet.pdf)
+* [Reinforcement Learning Cheat Sheet](https://towardsdatascience.com/reinforcement-learning-cheat-sheet-2f9453df7651)
 * [Reinforcement Learning Textbook](https://s3-us-west-1.amazonaws.com/udacity-drlnd/bookdraft2018.pdf)
 * [Reinforcement Learning Textbook - GitHub Repo to Python Examples](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction)
 * [Udacity DRL Github Repository](https://github.com/udacity/deep-reinforcement-learning)
 * [Open AI Gym - Installation Guide](https://github.com/openai/gym#installation)
 * [Deep Reinforcement Learning Nanodegree Links](https://docs.google.com/spreadsheets/d/19jUvEO82qt3itGP3mXRmaoMbVOyE6bLOp5_QwqITzaM/edit#gid=0)
+
+Important publications
+* [2004 Y. Ng et al., Autonomoushelicopterflightviareinforcementlearning --> Inverse Reinforcement Learning](https://people.eecs.berkeley.edu/~jordan/papers/ng-etal03.pdf)
+* [2004 Kohl et al., Policy Gradient Reinforcement Learning for FastQuadrupedal Locomotion --> Policy Gradient Methods](https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/icra04.pdf)
+* [2013-2015, Mnih et al. Human-level control through deep reinforcementlearning --> DQN](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+* [2014, Silver et al., Deterministic Policy Gradient Algorithms --> DPG](http://proceedings.mlr.press/v32/silver14.html)
+* [2015, Lillicrap et al., Continuous control with deep reinforcement learning --> DDPG](https://arxiv.org/abs/1509.02971)
+* [2015, Schulman et al, High-Dimensional Continuous Control Using Generalized Advantage Estimation --> GAE](https://arxiv.org/abs/1506.02438)
+* [2016, Schulman et al., Benchmarking Deep Reinforcement Learning for Continuous Control --> TRPO and GAE](https://arxiv.org/abs/1604.06778)
+* [2017, PPO](https://openai.com/blog/openai-baselines-ppo/)
+* [2018, Bart-Maron et al., Distributed Distributional Deterministic Policy Gradients](https://openreview.net/forum?id=SyZipzbCb)
+* [2013, Sergey et al., Guided Policy Search --> GPS](https://graphics.stanford.edu/projects/gpspaper/gps_full.pdf)
+* [2015, van Hasselt et al., Deep Reinforcement Learning with Double Q-learning --> DDQN](https://arxiv.org/abs/1509.06461)
+* [1993, Truhn et al., Issues in Using Function Approximation for Reinforcement Learning](https://www.ri.cmu.edu/pub_files/pub1/thrun_sebastian_1993_1/thrun_sebastian_1993_1.pdf)
+* [2015, Schaul et al., Prioritized Experience Replay --> PER](https://arxiv.org/abs/1511.05952)
+* [2015, Wang et al., Dueling Network Architectures for Deep Reinforcement Learning](https://arxiv.org/abs/1511.06581)
+* [2016, Silver et al., Mastering the game of Go with deep neural networks and tree search](https://www.researchgate.net/publication/292074166_Mastering_the_game_of_Go_with_deep_neural_networks_and_tree_search)
+* [2017, Hessel et al. Rainbow: Combining Improvements in Deep Reinforcement Learning](https://arxiv.org/abs/1710.02298)
+* [2016, Mnih et al., Asynchronous Methods for Deep Reinforcement Learning](https://arxiv.org/abs/1602.01783)
+* [2017, Bellemare et al., A Distributional Perspective on Reinforcement Learning](https://arxiv.org/abs/1707.06887)
+* [2017, Fortunato et al., Noisy Networks for Exploration](https://arxiv.org/abs/1706.10295)
+* [2016, Wang et al., Sample Efficient Actor-Critic with Experience Replay --> ACER](https://arxiv.org/abs/1611.01224)
+* [2017, Lowe et al. Multi-Agent Actor-Critic for MixedCooperative-Competitive Environments](https://papers.nips.cc/paper/2017/file/68a9750337a418a86fe06c1991a1d64c-Paper.pdf)
+* [2017, Silver et al. Mastering the Game of Go without Human Knowledge --> AlphaGo Zero](https://discovery.ucl.ac.uk/id/eprint/10045895/1/agz_unformatted_nature.pdf)
+* [2017, Silver et al., Mastering Chess and Shogi by Self-Play with aGeneral Reinforcement Learning Algorithm --> AlphaZero](https://arxiv.org/pdf/1712.01815.pdf)
